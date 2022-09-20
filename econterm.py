@@ -62,7 +62,7 @@ econ_dictionary = {
     
     }
 
-st.title('Economic Dashboard')
+    st.title('Economic Dashboard')
 # Helper Functions
 def to_df(series_name, start, end):
     series = fred.get_series(series_name, start, end)
