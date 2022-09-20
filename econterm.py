@@ -51,7 +51,7 @@ econ_dictionary = {
     
     }
 
-st.write('Economic Dashboard')
+
 # Helper Functions
 def to_df(series_name, start, end):
     series = fred.get_series(series_name, start, end)
@@ -63,19 +63,19 @@ def show_chart(df):
     if len(df) > 1:
         st.line_chart(df)
     else:
-        st.warning('\nSelect an earlier START date to view a line chart over time')
+        st.warning('\Select an earlier START date to view a line chart over time')
 
 major_selection = st.sidebar.selectbox(
     'Explore Data for:',
-    ('Overall Economic Activity', 'Labor Market',
+    ('Home','Overall Economic Activity', 'Labor Market',
      "Fed's Tools", "Inflation","Volatility")
 )
 
-start_date = st.date_input('START Date')
-end_date = st.date_input('END Date')
-date_condition = start_date < end_date
-
 if major_selection == 'Overall Economic Activity':
+    st.title('Overall Economic Activity')
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
     st.header('Overall Economic Activity')
     st.info("An Indicator's chart may not be available because \n"
             "data has not been released for the specified time frame.")
@@ -89,7 +89,7 @@ if major_selection == 'Overall Economic Activity':
     show_chart(gdp_percap)
     st.write('Updates *Quarterly*')
 
-    st.write('Use the drop box to Look at the GDP through its 4 main components')
+    st.subheader('Use the dropdown menu to look at the GDP through its 4 main components')
     gdp_components = st.selectbox("4 Main Components",
                                   ('Consumption', 'Investment', 'Government Expenditure', 'Net Exports'))
     if gdp_components == 'Consumption':
@@ -226,8 +226,14 @@ if major_selection == 'Overall Economic Activity':
     nfci = to_df('NFCI', start_date, end_date)
     show_chart(nfci)
     st.write('Updates *Weekly*')
+    
+    
+
 
 if major_selection == 'Labor Market':
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
     st.header('Labor Market')
 
     st.subheader('Unemployment Rates (U3 and U6)')
@@ -322,6 +328,9 @@ if major_selection == 'Labor Market':
     st.write('Updates Monthly')
 
 if major_selection == "Fed's Tools":
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
     st.header('Labor Market')
     st.header("Interest Rates")
     st.subheader("Fed's Funds Rate")
@@ -383,6 +392,9 @@ if major_selection == "Fed's Tools":
     
     
 if major_selection == 'Inflation':
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
     st.header('Inflation')
 
     st.subheader("Inflation Target from CPI")
@@ -411,6 +423,9 @@ if major_selection == 'Inflation':
     
    
 if major_selection == 'Volatility':
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
     st.header('Volatility')
 
     st.subheader("CBOE Volatility Index")
@@ -428,4 +443,16 @@ if major_selection == 'Volatility':
     vixs = pd.concat([vix, gvix,cvix],axis=1)
     show_chart(vixs)
 
+if major_selection == 'Home':
+        st.write("# Welcome to FRED Terminal ")
+        st.markdown(
+            """
+            FRED Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. ExtractAlpha supports any asset available on YahooFinance.com
+            
+           
+            ExtractAlpha consists of multiple unique dashboards that feature Asset Returns, Asset Price Comparisons, Asset Price Predictions, Monte Carlo Simulation, and Equity Fundamental Analysis. The Asset Price Prediction leverages Facebook Prophet to predict prices up to 5 years in the future. The model is trained from data of the assets daily opening and closing price based on the time period entered by the user. Select a dashboard and see what ExtractAlpha can do! 
+            
+            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!
+        """
+        )
 
