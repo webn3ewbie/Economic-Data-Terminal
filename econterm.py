@@ -450,7 +450,11 @@ if major_selection == 'Home':
             FRED Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. ExtractAlpha supports any asset available on YahooFinance.com
             
            
-            ExtractAlpha consists of multiple unique dashboards that feature Asset Returns, Asset Price Comparisons, Asset Price Predictions, Monte Carlo Simulation, and Equity Fundamental Analysis. The Asset Price Prediction leverages Facebook Prophet to predict prices up to 5 years in the future. The model is trained from data of the assets daily opening and closing price based on the time period entered by the user. Select a dashboard and see what ExtractAlpha can do! 
+            ExtractAlpha consists of multiple unique dashboards that feature Asset Returns, Asset Price Comparisons, Asset Price Predictions, Monte Carlo Simulation, and Equity Fundamental Analysis. The Asset Price Prediction leverages Facebook Prophet to predict prices up to 5 years in the future. The model is trained from data of the assets daily opening and closing price based on the time period entered by the user. Select a dashboard and see what ExtractAlpha can do!
+            #### Want to learn more?
+            - Check out the repo [Here](https://github.com/webn3ewbie/Equity-Currencies-Cryptos-Bonds-Analyzer)
+            - Connect with me on [LinkedIn](https://www.linkedin.com/in/joseph-biancamano/)
+            - Ask a question in the Streamlit community [forums](https://discuss.streamlit.io)
             
             Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!
         """
