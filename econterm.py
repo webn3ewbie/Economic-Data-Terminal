@@ -1,22 +1,11 @@
-
 import pandas as pd
 import streamlit as st
+import os
 from fredapi import Fred
 
 KEY = '9cbe93cd8132301fd46ad5e755944df0'
 fred = Fred(api_key=KEY)
 
-st.write("DB username:", st.secrets["db_username"])
-st.write("DB password:", st.secrets["db_password"])
-st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
-
-# And the root-level secrets are also accessible as environment variables:
-
-import os
-
-st.write(
-    "Has environment variables been set:",
-    os.environ["db_username"] == st.secrets["db_username"],
 
         
 econ_dictionary = {
@@ -62,7 +51,7 @@ econ_dictionary = {
     
     }
 
-    st.title('Economic Dashboard')
+st.write('Economic Dashboard')
 # Helper Functions
 def to_df(series_name, start, end):
     series = fred.get_series(series_name, start, end)
@@ -438,3 +427,5 @@ if major_selection == 'Volatility':
     
     vixs = pd.concat([vix, gvix,cvix],axis=1)
     show_chart(vixs)
+
+
