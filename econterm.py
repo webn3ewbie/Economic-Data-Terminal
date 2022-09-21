@@ -447,7 +447,7 @@ if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
         st.markdown(
             """
-            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. ExtractAlpha supports any asset available on YahooFinance.com
+            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
             
            
             MACRO Trerminal consists of multiple unique dashboards that feature Asset Returns, Asset Price Comparisons, Asset Price Predictions, Monte Carlo Simulation, and Equity Fundamental Analysis. The Asset Price Prediction leverages Facebook Prophet to predict prices up to 5 years in the future. The model is trained from data of the assets daily opening and closing price based on the time period entered by the user. Select a dashboard and see what ExtractAlpha can do!
