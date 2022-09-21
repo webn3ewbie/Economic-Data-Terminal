@@ -28,7 +28,7 @@ econ_dictionary = {
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],
         
     #Commodities
-    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price']
         
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
@@ -455,6 +455,10 @@ if major_selection == 'Commodities':
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
     show_chart(wti)
+    
+    st.subheader("Henry Hub Natural Gas Spot Price")
+    ng = to_df('DHHNGSP', start_date, end_date)
+    show_chart(ng)
 
 if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
