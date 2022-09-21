@@ -26,7 +26,10 @@ econ_dictionary = {
 
     #Volatility
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],
-    
+        
+    #Commodities
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],
+        
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -47,9 +50,6 @@ econ_dictionary = {
     'USACPIALLMINMEI': ['Inflation level'], 'PPIACO': ['PPI Level'], 'PCEC96': ['Real PCE Level'],
     'DSPIC96': ['Real Disposable Income $B']
         
-    #Commodities
-    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma']
-    
 
     
     }
