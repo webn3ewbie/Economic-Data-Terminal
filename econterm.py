@@ -444,7 +444,7 @@ if major_selection == 'Volatility':
     show_chart(vixs)
 
 if major_selection == 'Home':
-        st.write("# Welcome to FRED Terminal ")
+        st.write("# Welcome to MACRO Terminal ")
         st.markdown(
             """
             MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. ExtractAlpha supports any asset available on YahooFinance.com
