@@ -46,6 +46,9 @@ econ_dictionary = {
     #Inflation
     'USACPIALLMINMEI': ['Inflation level'], 'PPIACO': ['PPI Level'], 'PCEC96': ['Real PCE Level'],
     'DSPIC96': ['Real Disposable Income $B']
+        
+    #Commodities
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma']
     
 
     
@@ -68,7 +71,7 @@ def show_chart(df):
 major_selection = st.sidebar.selectbox(
     'Explore Data for:',
     ('Home','Overall Economic Activity', 'Labor Market',
-     "Fed's Tools", "Inflation","Volatility")
+     "Fed's Tools", "Inflation","Volatility","Commodities")
 )
 
 if major_selection == 'Overall Economic Activity':
@@ -442,6 +445,16 @@ if major_selection == 'Volatility':
     
     vixs = pd.concat([vix, gvix,cvix],axis=1)
     show_chart(vixs)
+        
+if major_selection == 'Commodities':
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('TODAY')
+    date_condition = start_date < end_date
+    st.header('Commodities')
+    
+    st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
+    wti = to_df('DCOILWTICO', start_date, end_date)
+    show_chart(wti)
 
 if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
