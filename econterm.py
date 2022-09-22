@@ -462,7 +462,7 @@ if major_selection == 'Commodities':
         st.subheader("PCrude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
         o = to_df('DCOILWTICO', start_date, end_date)
         hh = to_df('DHHNGSP', start_date, end_date)
-        c_services = to_df('PCESVC96', start_date, end_date)
+        c_services = to_df('GASREGW', start_date, end_date)
         c_total = pd.concat([o, hh, c_services], axis=1)
         show_chart(c_total)
         st.write('Updates *Quarterly*')
