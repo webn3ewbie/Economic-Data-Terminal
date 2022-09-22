@@ -470,7 +470,7 @@ if major_selection == 'Commodities':
         st.subheader("Henry Hub Natural Gas Spot Price")
         show_chart(ng)
         st.subheader("US Regular All Formulations Gas Price")
-        show_chart(gasa, y= 'US Dollars'))
+        show_chart(gasa, y= 'US Dollars')
         st.subheader("Average Price: Electricity per Kilowatt-Hour in U.S. City Average")
         show_chart(elc)
       
