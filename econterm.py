@@ -239,10 +239,11 @@ if major_selection == 'Overall Economic Activity':
     st.write('Updates *Weekly*')
     
 if major_selection == 'Labor Market':
+    st.header('Labor Market')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Labor Market')
+    
 
     st.subheader('Unemployment Rates (U3 and U6)')
     u3_rate = to_df('UNRATE',start_date, end_date)
@@ -396,10 +397,10 @@ if major_selection == "Fed's Tools":
     show_chart(ga_weekly)
      
 if major_selection == 'Inflation':
+    st.header('Inflation')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Inflation')
 
     st.subheader("Inflation Target from CPI")
     infl_20 = to_df('T20YIEM', start_date, end_date)
@@ -426,10 +427,10 @@ if major_selection == 'Inflation':
     show_chart(r_di)
     
 if major_selection == 'Volatility':
+    st.header('Volatility')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Volatility')
 
     st.subheader("CBOE Volatility Index")
     vix = to_df('VIXCLS', start_date, end_date)
@@ -447,10 +448,10 @@ if major_selection == 'Volatility':
     show_chart(vixs)
         
 if major_selection == 'Commodities':
+    st.header('Commodities')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Commodities')
     
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
