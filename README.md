@@ -1,10 +1,10 @@
-# Econ Data Terminal of Macro Indicators
+# Economic Terminal of Macro Datasets
 
 ## Purpose
 - Leverage an API to source different Information
-- Create a web app to view Fed data
+- Create a web app to view data sourced by the Fed
 
-## View our Economy from 3 Angles:
+## View the Economy from 4 Angles:
   ## 1. **Overall Economic Activity**: 
       - Total GDP:
           - Consumption (C)
@@ -54,7 +54,7 @@
           - Producer Price Index (PPI)
           - Real Personal Consumption Expenditure (PCE)
           - Real Disposable Income
-   ## 4. **Volatilityt**:
+   ## 4. **Volatility**:
       - CBOE Volatility Index
       - CBOE Gold ETF Volatility Index
       - CBOE Crude Oil ETF Volatility Index
