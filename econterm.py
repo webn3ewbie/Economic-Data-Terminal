@@ -331,7 +331,7 @@ if major_selection == 'Labor Market':
     st.write('Updates Monthly')
 
 if major_selection == "Fed's Tools":
-    st.title('Fed Tools)
+    st.title('Fed Tools')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
