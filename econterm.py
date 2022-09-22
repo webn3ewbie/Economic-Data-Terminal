@@ -464,7 +464,7 @@ if major_selection == 'Commodities':
         ng = to_df('DHHNGSP', start_date, end_date)
         gasa = to_df('GASREGW', start_date, end_date)
         elc = to_df('APU000072610', start_date, end_date)
-        etotal = pd.concat([wti, ng, gasa, elc], axis=1)
+        etotal = pd.concat([wti, ng, gasa, elc], axis=1, y= 'US Dollars')
         st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
         show_chart(wti)
         st.subheader("Henry Hub Natural Gas Spot Price")
