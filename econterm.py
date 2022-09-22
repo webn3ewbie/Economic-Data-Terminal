@@ -79,7 +79,7 @@ if major_selection == 'Home':
             MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, Commodities, and Recession Risks. 
             Select a dashboard and see what MACRO Terminal can do! 
             
-            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!!
+            
             #### Want to learn more?
             - Check out the repo [Here](https://github.com/webn3ewbie/Economic-Data-Terminal)
             - Connect with me on [LinkedIn](https://www.linkedin.com/in/joseph-biancamano/)
