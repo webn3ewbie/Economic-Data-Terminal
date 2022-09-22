@@ -456,7 +456,14 @@ if major_selection == 'Commodities':
     date_condition = start_date < end_date
     
     st.title("Energy")
-    
+    com_components = st.selectbox("2 Main Components",
+                                  ('Energy', 'Metals',))
+    if com_components == 'Consumption':
+        st.subheader("PCrude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
+        o = to_df('DCOILWTICO', start_date, end_date)
+        hh = to_df('DHHNGSP', start_date, end_date)
+        c_services = to_df('PCESVC96', start_date, end_date)
+        c_total = pd.concat([o, hh, c_services], axis=1)
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
     show_chart(wti)
