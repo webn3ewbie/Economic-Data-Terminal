@@ -5,7 +5,9 @@ from fredapi import Fred
 
 KEY = '9cbe93cd8132301fd46ad5e755944df0'
 fred = Fred(api_key=KEY)
-      
+
+
+        
 econ_dictionary = {
     # GDP
     'GDPC1': ['Real GDP $B'], 'A939RC0Q052SBEA': ['GDP/Capita'],
@@ -29,7 +31,7 @@ econ_dictionary = {
     #Commodities
     'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price'], 'APU0000708111':['Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average'],
     'APU0000FF1101':['Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average'], 'APU0000703112':['Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average'], 'APU000072610':['Average Price: Electricity per Kilowatt-Hour in U.S. City Average'], 
-    'PCOPPUSDM':['Global price of Copper"'], 'PALUMUSDM':['Global price of Aluminum'], 'PNICKUSDM':['Global price of Nickel'],
+    'PCOPPUSDM':['Global price of Copper"'], 'PALUMUSDM':['Global price of Aluminum'], 'PNICKUSDM':['Global price of Nickel'], 'APU0000701111':['Average Price: Flour, White, All Purpose (Cost per Pound) in U.S. City Average '],
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -450,8 +452,9 @@ if major_selection == 'Volatility':
         
 if major_selection == 'Commodities':
     st.title('Commodities')
-    com_components = st.selectbox('Select Commodity Type',
-                                  ('Energy','Agriculture', 'Metals'))
+    st.subheader("Select Commodity Type")
+    com_components = st.selectbox("3 Main Components",
+                                  ('Energy', 'Metals', 'Agriculture'))
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
@@ -476,6 +479,7 @@ if major_selection == 'Commodities':
         egg = to_df('APU0000708111', start_date, end_date)
         chk = to_df('APU0000FF1101', start_date, end_date)
         bef = to_df('APU0000703112', start_date, end_date)
+        flo = to_df('APU0000701111', start_date, end_date)
         etotal = pd.concat([egg, chk, bef], axis=1)
         st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
         show_chart(egg)
@@ -483,6 +487,8 @@ if major_selection == 'Commodities':
         show_chart(chk)
         st.subheader("Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average")
         show_chart(bef)
+        st.subheader('Average Price: Flour, White, All Purpose (Cost per Pound) in U.S. City Average ')
+        show_chart(flo)
         
     if com_components == 'Metals':
          cop = to_df('PCOPPUSDM', start_date, end_date)
