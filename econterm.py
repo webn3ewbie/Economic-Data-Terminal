@@ -459,14 +459,13 @@ if major_selection == 'Commodities':
     com_components = st.selectbox("2 Main Components",
                                   ('Energy', 'Metals',))
     if com_components == 'Energy':
-        st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
         o = to_df('DCOILWTICO', start_date, end_date)
         hh = to_df('DHHNGSP', start_date, end_date)
         gg = to_df('GASREGW', start_date, end_date)
         etotal = pd.concat([o, hh, gg], axis=1)
         st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
         show_chart(o)
-        st.subhearder("Henry Hub Natural Gas Spot Price")
+        st.subheader("Henry Hub Natural Gas Spot Price")
         show_chart(hh)
         st.write('Updates *Quarterly*')
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
