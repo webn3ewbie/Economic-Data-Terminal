@@ -54,4 +54,8 @@
           - Producer Price Index (PPI)
           - Real Personal Consumption Expenditure (PCE)
           - Real Disposable Income
+   ## 4. **Volatilityt**:
+      - CBOE Volatility Index
+      - CBOE Gold ETF Volatility Index
+      - CBOE Crude Oil ETF Volatility Index
 ### Data was sourced from the St.Louis FRED's API ![](http://www.aehe.es/wp-content/uploads/2018/06/FRED_logo-300x169.jpg)
