@@ -464,6 +464,8 @@ if major_selection == 'Commodities':
         hh = to_df('DHHNGSP', start_date, end_date)
         c_services = to_df('PCESVC96', start_date, end_date)
         c_total = pd.concat([o, hh, c_services], axis=1)
+        show_chart(c_total)
+        st.write('Updates *Quarterly*')
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
     show_chart(wti)
