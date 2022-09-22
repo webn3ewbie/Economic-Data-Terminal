@@ -1,13 +1,10 @@
 import pandas as pd
 import streamlit as st
-import os
 from fredapi import Fred
 
 KEY = '9cbe93cd8132301fd46ad5e755944df0'
 fred = Fred(api_key=KEY)
-
-
-        
+      
 econ_dictionary = {
     # GDP
     'GDPC1': ['Real GDP $B'], 'A939RC0Q052SBEA': ['GDP/Capita'],
@@ -23,7 +20,6 @@ econ_dictionary = {
     'IPG337S': ['Durable Goods - Furniture and related products'], 'IPG315A6S': ['Non-Durable Goods - Apparel and Leather Goods'],
     'GFDEBTN': ['Public Debt $M'], 'GFDEGDQ188S': ['Public Debt/Gross GDP Ratio'], 'MTSDS133FMS': ['Federal Surplus or Deficit'], 'FYFSGDA188S': ['Federal Surplus or Deficit as Ratio of GDP'],
     'NFCI': ['NFCI'],
-
     #Volatility
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],       
     #Recession Risks
@@ -52,7 +48,6 @@ econ_dictionary = {
         
     }
 
-
 # Helper Functions
 def to_df(series_name, start, end):
     series = fred.get_series(series_name, start, end)
@@ -65,7 +60,6 @@ def show_chart(df):
         st.line_chart(df)
     else:
         st.warning('\Select an earlier START date to view a line chart over time')
-
 major_selection = st.sidebar.selectbox(
     'Explore Data for:',
     ('Home','Overall Economic Activity', 'Labor Market',
@@ -197,7 +191,6 @@ if major_selection == 'Overall Economic Activity':
     furniture_df = to_df('IPG337S', start_date, end_date)
     apparel_df = to_df('IPG315A6S', start_date, end_date)
 
-
     manu_checks = [metals, compelec_prods, vehicles, furniture, apparel]
     manudf_list = [metals_df, compelec_prods_df, vehicles_df, furniture_df, apparel_df]
     manu_sectors_todisp = []
@@ -245,8 +238,7 @@ if major_selection == 'Labor Market':
     st.title('Labor Market')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
-    date_condition = start_date < end_date
-    
+    date_condition = start_date < end_date  
 
     st.subheader('Unemployment Rates (U3 and U6)')
     u3_rate = to_df('UNRATE',start_date, end_date)
@@ -259,7 +251,6 @@ if major_selection == 'Labor Market':
     natural_urate = to_df('NROU', start_date, end_date)
     show_chart(natural_urate)
     st.write('Updates Quarterly')
-
 
     st.subheader('Labor Force Participation Rates (LFPR)')
     lfpr_total = to_df('CIVPART', start_date, end_date)
@@ -354,8 +345,6 @@ if major_selection == "Fed's Tools":
     show_chart(effproj)
     st.write('Updates Yearly')
 
-    #st.subheader("LIBOR Rates")
-
     st.subheader('EFFR (Lending Rates between Banks)')
     effr = to_df('EFFR', start_date, end_date)
     show_chart(effr)
@@ -446,7 +435,6 @@ if major_selection == 'Volatility':
     st.subheader(" CBOE Crude Oil ETF Volatility Index")
     cvix = to_df('OVXCLS', start_date, end_date)
     show_chart(cvix)
-    
     vixs = pd.concat([vix, gvix,cvix],axis=1)
     show_chart(vixs)
         
@@ -472,8 +460,7 @@ if major_selection == 'Commodities':
         st.subheader("US Regular All Formulations Gas Price")
         show_chart(gasa)
         st.subheader("Average Price: Electricity per Kilowatt-Hour in U.S. City Average")
-        show_chart(elc)
-      
+        show_chart(elc)   
     
     if com_components == 'Agriculture':
         egg = to_df('APU0000708111', start_date, end_date)
