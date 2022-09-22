@@ -69,7 +69,25 @@ major_selection = st.sidebar.selectbox(
     ('Home','Overall Economic Activity', 'Labor Market',
      "Fed's Tools", "Inflation","Volatility","Commodities", "Recession Risks")
 )
-
+if major_selection == 'Home':
+        st.write("# Welcome to MACRO Terminal ")
+        st.markdown(
+            """ 
+            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
+            
+           
+            MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, Commodities, and Recession Risks. 
+            Select a dashboard and see what MACRO Terminal can do! 
+            
+            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!!
+            #### Want to learn more?
+            - Check out the repo [Here](https://github.com/webn3ewbie/Economic-Data-Terminal)
+            - Connect with me on [LinkedIn](https://www.linkedin.com/in/joseph-biancamano/)
+            - Ask a question in the Streamlit community [forums](https://discuss.streamlit.io)
+            
+            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!
+        """
+        )
 if major_selection == 'Overall Economic Activity':
     st.title('Overall Economic Activity')
     start_date = st.date_input('START Date')
@@ -463,23 +481,3 @@ if major_selection == 'Recession Risks':
     st.subheader("GDP-Based Recession Indicator Index")
     gdpr = to_df('JHGDPBRINDX', start_date, end_date)
     show_chart(gdpr)
-        
-if major_selection == 'Home':
-        st.write("# Welcome to MACRO Terminal ")
-        st.markdown(
-            """ 
-            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
-            
-           
-            MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, Commodities, and Recession Risks. Select a dashboard and see what MACRO Terminal can do! 
-            
-            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!!
-            #### Want to learn more?
-            - Check out the repo [Here](https://github.com/webn3ewbie/Economic-Data-Terminal)
-            - Connect with me on [LinkedIn](https://www.linkedin.com/in/joseph-biancamano/)
-            - Ask a question in the Streamlit community [forums](https://discuss.streamlit.io)
-            
-            Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!
-        """
-        )
-
