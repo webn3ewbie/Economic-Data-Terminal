@@ -464,10 +464,10 @@ if major_selection == 'Commodities':
     
 
 if major_selection == 'Recession Risks':
+    st.header('Recession Risks')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Recession Risks')
     
     st.subheader("10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity")
     ttm = to_df('T10Y3M', start_date, end_date)
