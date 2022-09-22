@@ -29,7 +29,7 @@ econ_dictionary = {
     #Recession Risks
     'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],      
     #Commodities
-    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'],      
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price']     
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -460,7 +460,11 @@ if major_selection == 'Commodities':
     
     st.subheader("Henry Hub Natural Gas Spot Price")
     ng = to_df('DHHNGSP', start_date, end_date)
-    show_chart(ng)  
+    show_chart(ng) 
+        
+    st.subheader("US Regular All Formulations Gas Price")
+    gasa = to_df('GASREGW', start_date, end_date)
+    show_chart(gasa)
 
 if major_selection == 'Recession Risks':
     st.title('Recession Risks')
