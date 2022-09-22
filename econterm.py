@@ -85,6 +85,7 @@ if major_selection == 'Home':
             - Connect with me on [LinkedIn](https://www.linkedin.com/in/joseph-biancamano/)
             - Ask a question in the Streamlit community [forums](https://discuss.streamlit.io)
             
+            
             Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!
         """
         )
