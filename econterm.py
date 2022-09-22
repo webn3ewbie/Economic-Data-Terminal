@@ -29,7 +29,7 @@ econ_dictionary = {
     #Recession Risks
     'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],      
     #Commodities
-    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price'],     
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price'], 'APU0000708111':['Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average'],    
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -465,6 +465,10 @@ if major_selection == 'Commodities':
     st.subheader("US Regular All Formulations Gas Price")
     gasa = to_df('GASREGW', start_date, end_date)
     show_chart(gasa)
+    
+    st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
+    egg = to_df('APU0000708111', start_date, end_date)
+    show_chart(egg) 
 
 if major_selection == 'Recession Risks':
     st.title('Recession Risks')
