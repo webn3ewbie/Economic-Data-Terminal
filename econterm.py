@@ -348,8 +348,8 @@ if major_selection == "Fed's Tools":
     st.write('Updates Daily')
 
     st.subheader("FOMC FFR Midpoint Project")
-    eff_proj = to_df('FEDTARRM', start_date, end_date)
-    show_chart(eff_proj)
+    effproj = to_df('FEDTARRM', start_date, end_date)
+    show_chart(effproj)
     st.write('Updates Yearly')
 
     #st.subheader("LIBOR Rates")
