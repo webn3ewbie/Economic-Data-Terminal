@@ -25,14 +25,11 @@ econ_dictionary = {
     'NFCI': ['NFCI'],
 
     #Volatility
-    'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],
-        
+    'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],       
     #Recession Risks
-    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],
-        
+    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],      
     #Commodities
-    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'],
-        
+    'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'],      
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -40,7 +37,6 @@ econ_dictionary = {
     'LNS11300003': ['White LFPR %'], 'LNS11300006': ['Black LFPR %'], 'LNS11300009': ['Hispanic LFPR %'], 'LNU01332183': ['Asian LFPR %'],
     'ICSA': ['Initial Jobless Claims'], 'IC4WSA': ['4 wk MA of Initial Claims'], 'CCSA': ['Continued Claims (Insured Unempl.)'], 'CC4WSA': ['4wk MA of Continued Claims'],
     'FRBKCLMCIM': ['Labor Market Momentum'], 'FRBKCLMCILA': ['Labor Market Level of Activity'],
-
     # Fed's Tools
     'DFF': ['Daily EFF rate'], 'FEDTARRM': ['EFF Midpoint Projection'],
     'T20YIEM':  ['20 yr CPI'], 'EFFR': ['Median EFFR'],
@@ -48,13 +44,10 @@ econ_dictionary = {
     'RPONAGYD': ['Repos Purchased $B'], 'RRPONTSYD': ['Repos Sold $B'],
     'DGS30': ['30 Year %'], 'DGS20': ['20 Year %'],'DGS10': ['10 Year %'], 'DGS5': ['5 Year %'] ,'DGS2': ['2 Year %'],
     'RESPPLLDTXAWXCH52NWW': ['Weekly Net Change in General Account $M'],
-
     #Inflation
     'USACPIALLMINMEI': ['Inflation level'], 'PPIACO': ['PPI Level'], 'PCEC96': ['Real PCE Level'],
     'DSPIC96': ['Real Disposable Income $B']
         
-
-    
     }
 
 
@@ -162,12 +155,10 @@ if major_selection == 'Overall Economic Activity':
     show_chart(months_on_market)
     st.write('Updates *Monthly*')
 
-
     st.subheader('Federal Housing Financing Agency Price Index')
     fhfi = to_df('USSTHPI', start_date, end_date)
     show_chart(fhfi)
     st.write('Updates *Quarterly*')
-
 
     st.header('Manufacturing Sector')
     naics_ipmanu = to_df('IPMAN', start_date, end_date)
@@ -214,18 +205,15 @@ if major_selection == 'Overall Economic Activity':
     show_chart(debt_to_gdp)
     st.write('Updates *Quarterly*')
 
-
     st.subheader('Federal Surplus or Deficit')
     surp_or_def = to_df('MTSDS133FMS', start_date, end_date)
     show_chart(surp_or_def)
     st.write('Updates *Monthly*')
 
-
     st.subheader('Surplus or Deficit/GDP Ratio')
     surp_or_def_ratio = to_df('FYFSGDA188S', start_date, end_date)
     show_chart(surp_or_def_ratio)
     st.write('Updates *Monthly*')
-
 
     st.header('Credit Market')
     st.subheader('National Financial Conditions Index ')
@@ -233,9 +221,6 @@ if major_selection == 'Overall Economic Activity':
     show_chart(nfci)
     st.write('Updates *Weekly*')
     
-    
-
-
 if major_selection == 'Labor Market':
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
@@ -377,10 +362,8 @@ if major_selection == "Fed's Tools":
     show_chart(repos)
     st.write('Updates Daily')
     st.write(repos)
-    
-    
 
-    st.header("Yield Curves") #Include checkboxes for 2-20yr rates
+    st.header("Yield Curves") 
     st.subheader('Treasury Yields')
     yield_30 = to_df('DGS30', start_date, end_date)
     yield_20 = to_df('DGS20', start_date, end_date)
@@ -394,8 +377,7 @@ if major_selection == "Fed's Tools":
     st.subheader('Fed Balance Sheet: Weekly Net Change in General Account')
     ga_weekly = to_df('RESPPLLDTXAWXCH52NWW', start_date, end_date)
     show_chart(ga_weekly)
-    
-    
+     
 if major_selection == 'Inflation':
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
@@ -426,7 +408,6 @@ if major_selection == 'Inflation':
     r_di = to_df('DSPIC96', start_date, end_date)
     show_chart(r_di)
     
-   
 if major_selection == 'Volatility':
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
@@ -460,8 +441,7 @@ if major_selection == 'Commodities':
     
     st.subheader("Henry Hub Natural Gas Spot Price")
     ng = to_df('DHHNGSP', start_date, end_date)
-    show_chart(ng)
-    
+    show_chart(ng)  
 
 if major_selection == 'Recession Risks':
     st.header('Recession Risks')
@@ -492,7 +472,7 @@ if major_selection == 'Home':
             MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
             
            
-            MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, and Commodities. Select a dashboard and see what MACRO Terminal can do! 
+            MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, Commodities, and Recession Risks. Select a dashboard and see what MACRO Terminal can do! 
             
             Please note this app is NOT financial advice,  nor are any dashboards intended to help guide financial decisions!!
             #### Want to learn more?
