@@ -455,7 +455,7 @@ if major_selection == 'Commodities':
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
     
-    st.subheader("Energy")
+    st.title("Energy")
     
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
@@ -468,7 +468,7 @@ if major_selection == 'Commodities':
     st.subheader("US Regular All Formulations Gas Price")
     gasa = to_df('GASREGW', start_date, end_date)
     show_chart(gasa)
-    st.subheader("Agriculture")
+    st.title("Agriculture")
     st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
     egg = to_df('APU0000708111', start_date, end_date)
     show_chart(egg) 
