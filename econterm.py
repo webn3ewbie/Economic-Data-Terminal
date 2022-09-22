@@ -471,7 +471,7 @@ if major_selection == 'Commodities':
     st.title("Agriculture")
     st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
     egg = to_df('APU0000708111', start_date, end_date)
-    show_chart(egg, y = "US Dollars") 
+    st.line_chart(egg, y = "US Dollars") 
     st.subheader("AAverage Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average")
     chk = to_df('APU0000FF1101', start_date, end_date)
     show_chart(chk) 
