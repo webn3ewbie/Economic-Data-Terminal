@@ -1,10 +1,10 @@
 # Economic Terminal of Macro Datasets
 
-## Purpose
+# Purpose
 - Leverage an API to source different Information
 - Create a web app to view data sourced by the Fed
 
-## View the Economy from 4 Angles:
+## View the Economy from 6 Angles:
   ## 1. **Overall Economic Activity**: 
       - Total GDP:
           - Consumption (C)
@@ -58,4 +58,11 @@
       - CBOE Volatility Index
       - CBOE Gold ETF Volatility Index
       - CBOE Crude Oil ETF Volatility Index
+  ## 4. **Commodities**:
+      - Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma
+      - Henry Hub Natural Gas Spot Price
+      - US Regular All Formulations Gas Price
+      - Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average
+      - Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average
+      - Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average
 ### Data was sourced from the St.Louis FRED's API ![](http://www.aehe.es/wp-content/uploads/2018/06/FRED_logo-300x169.jpg)
