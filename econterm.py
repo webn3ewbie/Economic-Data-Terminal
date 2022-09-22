@@ -28,7 +28,7 @@ econ_dictionary = {
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],
         
     #Recession Risks
-    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'],
+    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],
         
     #Commodities
     'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'],
@@ -479,8 +479,12 @@ if major_selection == 'Recession Risks':
     
     st.subheader("Real-time Sahm Rule Recession Indicator")
     srr = to_df('SAHMREALTIME', start_date, end_date)
-    show_chart(srr)    
-    
+    show_chart(srr)
+
+    st.subheader("GDP-Based Recession Indicator Index")
+    gdpr = to_df('JHGDPBRINDX', start_date, end_date)
+    show_chart(gdpr)
+        
 if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
         st.markdown(
