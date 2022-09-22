@@ -467,7 +467,7 @@ if major_selection == 'Commodities':
     st.subheader("US Regular All Formulations Gas Price")
     gasa = to_df('GASREGW', start_date, end_date)
     show_chart(gasa)
-    
+    st.subheader("Agriculture")
     st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
     egg = to_df('APU0000708111', start_date, end_date)
     show_chart(egg) 
