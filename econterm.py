@@ -450,7 +450,7 @@ if major_selection == 'Volatility':
         
 if major_selection == 'Commodities':
     st.title('Commodities')
-    com_components = st.selectbox('# Select Commodity Type',
+    com_components = st.selectbox('Select Commodity Type',
                                   ('Energy','Agriculture', 'Metals'))
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
