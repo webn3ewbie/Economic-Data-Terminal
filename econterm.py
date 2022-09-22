@@ -27,8 +27,8 @@ econ_dictionary = {
     #Volatility
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],
         
-    #Volatility
-    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'],  
+    #Recession Risks
+    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'] 
         
     #Commodities
     'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'],
@@ -472,6 +472,11 @@ if major_selection == 'Recession Risks':
     st.subheader("10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity")
     ttm = to_df('T10Y3M', start_date, end_date)
     show_chart(ttm)
+        
+    st.subheader("Smoothed U.S. Recession Probabilities")
+    srp = to_df('RECPROUSM156N', start_date, end_date)
+    show_chart(srp)
+      
 if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
         st.markdown(
