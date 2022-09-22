@@ -456,7 +456,7 @@ if major_selection == 'Commodities':
     
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
-    show_chart(wti/10)
+    show_chart(wti)
     
     st.subheader("Henry Hub Natural Gas Spot Price")
     ng = to_df('DHHNGSP', start_date, end_date)
