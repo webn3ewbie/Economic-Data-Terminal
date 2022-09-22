@@ -71,7 +71,7 @@ def show_chart(df):
 major_selection = st.sidebar.selectbox(
     'Explore Data for:',
     ('Home','Overall Economic Activity', 'Labor Market',
-     "Fed's Tools", "Inflation","Volatility","Commodities")
+     "Fed's Tools", "Inflation","Volatility","Commodities", "Recession Risks")
 )
 
 if major_selection == 'Overall Economic Activity':
@@ -458,7 +458,17 @@ if major_selection == 'Commodities':
     st.subheader("Henry Hub Natural Gas Spot Price")
     ng = to_df('DHHNGSP', start_date, end_date)
     show_chart(ng)
+    
 
+if major_selection == 'Recession Risks':
+    start_date = st.date_input('START Date')
+    end_date = st.date_input('END Date')
+    date_condition = start_date < end_date
+    st.header('Recession Risks')
+    
+    st.subheader("10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity")
+    ttm = to_df('T10Y3M', start_date, end_date)
+    show_chart(ttm)
 if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
         st.markdown(
