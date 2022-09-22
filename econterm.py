@@ -75,7 +75,6 @@ if major_selection == 'Overall Economic Activity':
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Overall Economic Activity')
     st.info("An Indicator's chart may not be available because \n"
             "data has not been released for the specified time frame.")
     st.subheader('Gross Domestic Product (GDP)')
