@@ -1,4 +1,4 @@
-import pandas as pd
+  import pandas as pd
 import streamlit as st
 import os
 from fredapi import Fred
@@ -30,7 +30,7 @@ econ_dictionary = {
     'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],      
     #Commodities
     'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price'], 'APU0000708111':['Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average'],
-    'APU0000FF1101':['Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average'],   
+    'APU0000FF1101':['Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average'], 'APU0000703112':['Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average'], 
     # Labor Market
     'UNRATE': ['U3 Rate %'], 'U6RATE': ['U6 Rate %'], 'NROU': ['Natural Unemployment Rate %'],
     'CIVPART': ['Cumm. LFPR %'], 'LNS11300002': ['Women LFPR%'], 'LNS11300001': ['Men LFPR%'],
@@ -475,6 +475,9 @@ if major_selection == 'Commodities':
     st.subheader("AAverage Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average")
     chk = to_df('APU0000FF1101', start_date, end_date)
     show_chart(chk) 
+    st.subheader("AAverage Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average")
+    bef = to_df('APU0000703112', start_date, end_date)
+    show_chart(bef)
      
 if major_selection == 'Recession Risks':
     st.title('Recession Risks')
