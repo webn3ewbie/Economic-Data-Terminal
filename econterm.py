@@ -334,8 +334,6 @@ if major_selection == "Fed's Tools":
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
-    st.header('Labor Market')
-    st.header("Interest Rates")
     st.subheader("Fed's Funds Rate")
     eff = to_df('DFF', start_date, end_date)
     show_chart(eff)
