@@ -458,7 +458,7 @@ if major_selection == 'Commodities':
     st.title("Energy")
     com_components = st.selectbox("2 Main Components",
                                   ('Energy', 'Metals',))
-    if com_components == 'Consumption':
+    if com_components == 'Energy:
         st.subheader("PCrude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
         o = to_df('DCOILWTICO', start_date, end_date)
         hh = to_df('DHHNGSP', start_date, end_date)
