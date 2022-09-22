@@ -472,10 +472,10 @@ if major_selection == 'Commodities':
     st.subheader("Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average")
     egg = to_df('APU0000708111', start_date, end_date)
     show_chart(egg) 
-    st.subheader("AAverage Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average")
+    st.subheader("Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average")
     chk = to_df('APU0000FF1101', start_date, end_date)
     show_chart(chk) 
-    st.subheader("AAverage Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average")
+    st.subheader("Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average")
     bef = to_df('APU0000703112', start_date, end_date)
     show_chart(bef)
      
