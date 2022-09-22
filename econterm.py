@@ -239,7 +239,7 @@ if major_selection == 'Overall Economic Activity':
     st.write('Updates *Weekly*')
     
 if major_selection == 'Labor Market':
-    st.header('Labor Market')
+    st.title('Labor Market')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
@@ -397,7 +397,7 @@ if major_selection == "Fed's Tools":
     show_chart(ga_weekly)
      
 if major_selection == 'Inflation':
-    st.header('Inflation')
+    st.title('Inflation')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
@@ -427,7 +427,7 @@ if major_selection == 'Inflation':
     show_chart(r_di)
     
 if major_selection == 'Volatility':
-    st.header('Volatility')
+    st.title('Volatility')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
@@ -448,7 +448,7 @@ if major_selection == 'Volatility':
     show_chart(vixs)
         
 if major_selection == 'Commodities':
-    st.header('Commodities')
+    st.title('Commodities')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
@@ -462,7 +462,7 @@ if major_selection == 'Commodities':
     show_chart(ng)  
 
 if major_selection == 'Recession Risks':
-    st.header('Recession Risks')
+    st.title('Recession Risks')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
     date_condition = start_date < end_date
