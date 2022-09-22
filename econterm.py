@@ -464,7 +464,7 @@ if major_selection == 'Commodities':
         hh = to_df('DHHNGSP', start_date, end_date)
         gg = to_df('GASREGW', start_date, end_date)
         etotal = pd.concat([o, hh, gg], axis=1)
-        show_chart(etotal)
+        show_chart(hh)
         st.write('Updates *Quarterly*')
     st.subheader("Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma")
     wti = to_df('DCOILWTICO', start_date, end_date)
