@@ -69,7 +69,7 @@ if major_selection == 'Home':
         st.write("# Welcome to MACRO Terminal ")
         st.markdown(
             """ 
-            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, currencies, and cryptos. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
+            MACRO Terminal is an open-source Streamlit app built specifically to analyze equities, bonds, commodities, and currencies. MACRO Terminal leverages the FRED API, which allow users to analyze a wide ranging number of macro datasets.
             
            
             MACRO Terminal consists of multiple unique dashboards that feature Overall Economic Activity, Labor Markets, Fed Tools, Inflation, Volatility, Commodities, and Recession Risks. 
