@@ -23,7 +23,8 @@ econ_dictionary = {
     #Volatility
     'VIXCLS': [' VIX'], 'GVZCLS': [' CBOE Gold ETF Volatility'], 'OVXCLS': ['CBOE Crude Oil ETF Volatility Index'],       
     #Recession Risks
-    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],      
+    'T10Y3M': [' 10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity'], 'RECPROUSM156N':['Smoothed U.S. Recession Probabilities'], 'SAHMREALTIME':['Real-time Sahm Rule Recession Indicator'], 'JHGDPBRINDX':['GDP-Based Recession Indicator Index'],
+    'T10Y2Y': ['10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity'],
     #Commodities
     'DCOILWTICO':[' Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'],'DHHNGSP':['Henry Hub Natural Gas Spot Price'], 'GASREGW':['US Regular All Formulations Gas Price'], 'APU0000708111':['Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average'],
     'APU0000FF1101':['Average Price: Chicken Breast, Boneless (Cost per Pound) in U.S. City Average'], 'APU0000703112':['Average Price: Ground Beef, 100% Beef (Cost per Pound) in U.S. City Average'], 'APU000072610':['Average Price: Electricity per Kilowatt-Hour in U.S. City Average'], 
@@ -494,20 +495,19 @@ if major_selection == 'Recession Risks':
     st.title('Recession Risks')
     start_date = st.date_input('START Date')
     end_date = st.date_input('END Date')
-    date_condition = start_date < end_date
-    
+    date_condition = start_date < end_date  
+    st.subheader("10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity'")
+    tty = to_df('T10Y2Y', start_date, end_date)
+    show_chart(tty)
     st.subheader("10-Year Treasury Constant Maturity Minus 3-Month Treasury Constant Maturity")
     ttm = to_df('T10Y3M', start_date, end_date)
-    show_chart(ttm)
-        
+    show_chart(ttm)     
     st.subheader("Smoothed U.S. Recession Probabilities")
     srp = to_df('RECPROUSM156N', start_date, end_date)
-    show_chart(srp)
-    
+    show_chart(srp)  
     st.subheader("Real-time Sahm Rule Recession Indicator")
     srr = to_df('SAHMREALTIME', start_date, end_date)
     show_chart(srr)
-
     st.subheader("GDP-Based Recession Indicator Index")
     gdpr = to_df('JHGDPBRINDX', start_date, end_date)
     show_chart(gdpr)
