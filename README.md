@@ -1,4 +1,4 @@
-# Economic Terminal of Macro Datasets  [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/py)
+# Economic Terminal of Macro Datasets  [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://webn3ewbie-economic-data-terminal-econterm-kzs8s4.streamlitapp.com/py)
 
 
 # Purpose
