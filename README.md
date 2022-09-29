@@ -1,4 +1,5 @@
-# Economic Terminal of Macro Datasets
+# Economic Terminal of Macro Datasets  [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/py)
+
 
 # Purpose
 - Leverage an API to source different Information
