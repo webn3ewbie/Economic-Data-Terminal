@@ -1,6 +1,4 @@
-# Economic Terminal of Macro Datasets  [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)(https://macroquant.streamlit.app/)]    
-
-
+# Economic Terminal of Macro Datasets [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://macroquant.streamlit.app/) 
 # Purpose
 - Leverage an API to source different Information
 - Create a web app to view data sourced by the Fed
